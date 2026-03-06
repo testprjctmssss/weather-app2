@@ -118,6 +118,7 @@ function App() {
             <th>区分</th>
             <th>天気</th>
             <th>天気詳細</th>
+            <th>降水確率</th>
             <th>最低気温</th>
             <th>最高気温</th>
           </tr>
@@ -133,6 +134,11 @@ function App() {
                 {item.telop}
               </td>
               <td>{item.detail.weather ?? "詳細データ無し"}</td>
+              <td style={{ lineHeight: "1.6" ,padding: "5px" }}>00～06 時：{item.chanceOfRain.T00_06}<br />
+                  06～12 時：{item.chanceOfRain.T06_12}<br />
+                  12～18 時：{item.chanceOfRain.T12_18}<br />
+                  18～24 時：{item.chanceOfRain.T18_24}
+                  </td>
               <td>{item.temperature.min?.celsius ?? "--"}℃</td>
               <td>{item.temperature.max?.celsius ?? "--"}℃</td>
             </tr>
